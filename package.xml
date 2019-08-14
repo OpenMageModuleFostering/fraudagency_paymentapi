@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <package>
     <name>Fraudagency_Paymentapi</name>
-    <version>0.3.7</version>
+    <version>0.3.8</version>
     <stability>stable</stability>
     <license uri="http://www.opensource.org/licenses/gpl-license.php">GPL</license>
     <channel>community</channel>

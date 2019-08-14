@@ -50,7 +50,7 @@
               $currency    = Mage::getSingleton('checkout/session')->getQuote()->getQuoteCurrencyCode();
               $array_with_order_information = array(
                 'shopsystem' => 'magento',
-                'appversion' => '0.3.6',
+                'appversion' => '0.3.8',
                 'customer' => $customerID,
                 'name' => $this->_billingname,
                 'address' => $this->_billingaddress,
@@ -107,7 +107,7 @@
                 'payment_method' => $array_with_payment_methods,
                 'order' => $array_with_order_information
               );
-              $response = json_decode(file_get_contents(('https://fraud.agency/api/?q='. urlencode(json_encode($array))), 0, stream_context_create(array('https' => array('timeout' => 5)))), 1);
+              $response = json_decode(file_get_contents(('https://api.fraud.agency/?q='. urlencode(json_encode($array))), 0, stream_context_create(array('https' => array('timeout' => 5)))), 1);
               if (empty($response['err_msg']) && $response['call']==1)  {
                 foreach ($response['accepted_payment_method'] as $key => $value) {
                   if (in_array($value['payment_method'], $Activemethods))  {
@@ -160,7 +160,7 @@
           'query' => 'init_license_key',
           'payment_method' => $array_with_payment_methods
         );
-        $response = json_decode(file_get_contents(('https://fraud.agency/api/?q='. urlencode(json_encode($array))), 0, stream_context_create(array('https' => array('timeout' => 5)))), 1);
+        $response = json_decode(file_get_contents(('https://api.fraud.agency/?q='. urlencode(json_encode($array))), 0, stream_context_create(array('https' => array('timeout' => 5)))), 1);
         $session = Mage::getSingleton('core/session');
         if (empty($response['err_msg']) && $response['call']==1) {
           $session->addSuccess('License key is valid and active');
