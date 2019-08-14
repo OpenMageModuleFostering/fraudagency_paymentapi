@@ -13,7 +13,7 @@
       $pos = strrpos($action_name, "_");
       $action = substr($action_name,$pos+1);
       $param_billing = Mage::app()->getFrontController()->getRequest()->getParam('billing', array());
-      if( ($action == 'saveBilling' && $param_billing['use_for_shipping'] == 1) || $action == 'saveShipping') {  
+      if( ($action == 'saveBilling' && $param_billing['use_for_shipping'] == 1) || $action == 'saveShipping') {
         $enablePaymentapi  = Mage::getStoreConfig('paymentapi/general/activate_fraudagency_paymentapi_enable');
         $enablePaymentapi = intval($enablePaymentapi);
         if($enablePaymentapi) {
@@ -49,6 +49,8 @@
               $grandtotal = $order_total["grand_total"]->getValue();
               $currency    = Mage::getSingleton('checkout/session')->getQuote()->getQuoteCurrencyCode();
               $array_with_order_information = array(
+                'shopsystem' => 'magento',
+                'appversion' => '0.3.6',
                 'customer' => $customerID,
                 'name' => $this->_billingname,
                 'address' => $this->_billingaddress,
@@ -87,7 +89,7 @@
               $store = Mage::app()->getStore();
               foreach ($allAvailablePaymentMethods as $paymentCode=>$paymentModel) {
                 $active = Mage::getStoreConfigFlag('payment/'.$paymentCode.'/active', $store);
-                if($active) { 
+                if($active) {
                   $status = $active;
                 } else {
                   $status = '0';
@@ -126,7 +128,7 @@
       $method = $event->getMethodInstance();
       $result = $event->getResult();
       $getPaymentMethods = Mage::getSingleton('core/session')->getPaymentMethods();
-      if(count($getPaymentMethods) > 0) {  
+      if(count($getPaymentMethods) > 0) {
         if (!in_array($method->getCode(),$getPaymentMethods)) {
           $result->isAvailable = false;
         }

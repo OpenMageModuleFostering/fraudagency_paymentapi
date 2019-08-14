@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <package>
     <name>Fraudagency_Paymentapi</name>
-    <version>0.3.5</version>
+    <version>0.3.6</version>
     <stability>stable</stability>
     <license uri="http://www.opensource.org/licenses/gpl-license.php">GPL</license>
     <channel>community</channel>
@@ -21,5 +21,5 @@ Please note that you need a license-key to use our service. Visit our website fo
     <time>16:46:45</time>
     <contents><target name="magecommunity"><dir name="Fraudagency"><dir name="Paymentapi"><dir name="Block"><dir name="Adminhtml"><dir name="System"><dir name="Config"><dir name="Form"><file name="Button.php" hash="a0e7a4bb70f428e90839712a06ec0cc5"/></dir></dir></dir></dir></dir><dir name="Helper"><file name="Data.php" hash="a97f541415729338cb3fb591399af67e"/></dir><dir name="Model"><file name="Observer.php" hash="f85bf873a9f399b03d0b4a73c55586e2"/></dir><dir name="controllers"><dir name="Adminhtml"><file name="PaymentapiController.php" hash="fac8a7e2bafd68705f0e39493fd9756e"/></dir></dir><dir name="etc"><file name="adminhtml.xml" hash="79cd9aaf297d5ab176b7bb80df941fdd"/><file name="config.xml" hash="ef9cd943deadb9167a6867afcdc5247e"/><file name="system.xml" hash="08c92615822b047e0997a9e8ee52db16"/></dir></dir></dir></target><target name="mageetc"><dir name="modules"><file name="Fraudagency_Paymentapi.xml" hash="d5b931b7c46b3f64646f2802015f225f"/></dir></target><target name="magedesign"><dir name="adminhtml"><dir name="default"><dir name="default"><dir name="template"><dir name="paymentapi"><dir name="system"><dir name="config"><file name="button.phtml" hash="239cb1c998aefad8b1aaf89c15146669"/></dir></dir></dir></dir></dir></dir></dir></target></contents>
     <compatible/>
-    <dependencies><required><php><min>5.0.0</min><max>5.5.12</max></php></required></dependencies>
+    <dependencies><required><php><min>5.0.0</min><max>5.5.15</max></php></required></dependencies>
 </package>
