@@ -36,8 +36,6 @@
   					  if(Mage::getSingleton('customer/session')->isLoggedIn()) {
                 $customerData = Mage::getSingleton('customer/session')->getCustomer();
                 $customerID = $customerData->getId();
-              } else {
-                $customerID = 'guest';
               }
   						$shipname = $address->getData("firstname").' '.$address->getData("lastname");
          			$shipaddress = $address->getStreet(1).' '.$address->getStreet(2);
