@@ -1,16 +1,19 @@
 {
-    "name": "OpenMageModuleFostering/Fraudagency_Paymentapi",
+    "name": "OpenMageModuleFostering\/Fraudagency_Paymentapi",
     "type": "magento-module",
     "license": "GPL",
     "homepage": "",
-    "description": "Protect yourself with FRAUD.AGENCY and our PaymentAPI. Visit us: https://fraud.agency",
+    "description": "Protect yourself with FRAUD.AGENCY and our PaymentAPI. Visit us: https:\/\/fraud.agency",
     "authors": [
-    {
-        "name": "FRAUD.AGENCY",
-        "email": "info@fraud.agency"
-    }
-],
+        {
+            "name": "FRAUD.AGENCY",
+            "email": "info@fraud.agency"
+        }
+    ],
     "suggest": {
-        "magento-hackathon/magento-composer-installer": "*"
-    }
+        "magento-hackathon\/magento-composer-installer": "*"
+    },
+    "keywords": [
+        "openmage-module"
+    ]
 }
